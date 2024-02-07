@@ -1,19 +1,14 @@
-# while True:
-#     user_input = input("Enter text")
-#     print(user_input)
-#     if user_input == "exit":
-#         break
+def is_valid_pin_codes(pin_codes):
+    answer = False
+    if len(pin_codes) > 0:
+        check_set = set(pin_codes)
+        if len(check_set) == len(pin_codes):
+            for i in pin_codes:
+                if i.isdigit() and len(i) == 4:
+                    answer = True
+                else:
+                    answer = False
+                    break
+    return answer
 
-# print ("Finish")
-
-def total(a=5, *numbers, **phone_book):
-    print('a', a)
-    # прохід по всіх елементах кортежу
-    for single_item in numbers:
-        print('single_item', single_item)
-
-    #прохід по всіх елементах словника
-    for first_part, second_part in phone_book.items():
-        print(first_part,second_part)
-
-print(total(10, 1, 2, 3, Jack=1123, John=2231, Inge=1560))
+             
