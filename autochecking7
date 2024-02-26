@@ -1,0 +1,12 @@
+data = [1, 2, 3, 4]
+
+def all_sub_lists(data):
+    sub_lists = [[]]
+    for length in range(1, len(data) + 1):  # Перебираем все длины подсписков
+        for i in range(len(data) - length + 1):  # Перебираем все начальные индексы подсписков
+            sub_lists.append(data[i : i + length])  # Формируем подсписок и добавляем его в список подсписков
+    return sub_lists
+
+
+print(all_sub_lists(data))
+

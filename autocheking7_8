@@ -1,0 +1,12 @@
+def get_employees_by_profession(path, profession):
+    with open (path, "r") as file:
+        data = file.readlines()
+        names = ""
+        for man in data:
+            if man.find(profession) != -1:
+                names += man.strip().replace(profession, "")
+    clear_names = names.strip() 
+
+    return clear_names
+profession = "courier"
+print(get_employees_by_profession("data7_8.txt", profession))
